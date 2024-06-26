@@ -20,7 +20,8 @@ const createAllTraitIndexes = () => {
 
 const createScriptTags = (allTraitIndexes) =>
   allTraitIndexes.map(
-    (idxs) => `<script t="${idxs.join(",")}" src=${scriptSrc}"></script>`
+    (traits, i) =>
+      `<script id="${i + 1}" t="${traits.join(",")}" src="${scriptSrc}"></script>`
   );
 
 console.log(createScriptTags(createAllTraitIndexes()));
